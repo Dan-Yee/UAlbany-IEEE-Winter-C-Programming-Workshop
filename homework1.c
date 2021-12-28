@@ -61,7 +61,7 @@ int main(int *argc, char **argv) {
     // Queston 3.2) Write a program to cmpute the date of Easter Sunday using the algorithm invented by the mathematician Carl Friedrich Gauss
     printf("\n====================================================================================================\n");
     int year;
-    int a, b, c, d, e, f, g, h, j, k, m, n, p, r;
+    int a, b, c, d, e, g, h, j, k, m, n, p, r;
     
     printf("Enter a year (YYYY): ");
     scanf("%d", &year);
