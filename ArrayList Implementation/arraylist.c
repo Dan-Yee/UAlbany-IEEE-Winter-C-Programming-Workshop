@@ -1,10 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "arraylist.h"
 
-struct ArrayList {
-    size_t listSize;
-    int* arrayList;
-};
+/* Implementation of ArrayList functions */
 
 /**
  * Void function that creates an "ArrayList" by mallocing an array of size initialSize
@@ -61,36 +57,4 @@ void add(struct ArrayList* list, int element) {
  */
 void deleteArrayList(struct ArrayList* list) {
     free(list->arrayList);
-}
-
-/**
- * Driver function for testing ArrayList implementation
- */
-int main(int argc, char** argv) {
-    struct ArrayList list;
-
-    printf("Create new ArrayList of size 10\n");
-    createArrayList(&list, 10);
-
-    printf("\nSet all ArrayList elements\n");
-    for(int i = 2; i <= 20; i += 2)
-        set(&list, ((i / 2) - 1), i * i);
-
-    printf("\nGet all ArrayList elements\n");
-    for(int j = 0; j < size(list); j++)
-        printf("The element at index %d is \"%d\"\n", j, get(&list, j));
-
-    printf("\nAdd \"1000\" to the end of the ArrayList\n");
-    add(&list, 1000);
-
-    printf("\nGet all ArrayList elements\n");
-    for(int j = 0; j < size(list); j++)
-        printf("The element at index %d is \"%d\"\n", j, get(&list, j));
-
-    printf("\nDeleting the ArrayList\n");
-    deleteArrayList(&list);
-
-    /*printf("\nAttempting to write/read to/from the now deleted ArrayList\n");
-    set(&list, 5, 69420);
-    printf("The element at index 5 is \"%d\"\n", get(&list, 5));*/
 }
