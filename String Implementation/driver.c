@@ -57,15 +57,14 @@ int main(int argc, char** argv) {
     free(duplicated);
 
     printf("\n<< Testing stringConcat Implementation >>\n");
-    char* string7 = "Hello";
+    char string7[50] = "Hello";
     const char* string8 = " World!";
     
     printf("Value of variable \"string7\" is \"%s\"\n", string7);
     printf("Value of variable \"string8\" is \"%s\"\n", string8);
     printf("Concatenate \"%s\" onto \"%s\"...\n", string8, string7);
-    string7 = stringConcat(string7, string8);
-    printf("Value of variable \"string7\" is \"%s\"\n", string7);  
-    free(string7);
+    stringConcat(string7, string8);
+    printf("Value of variable \"string7\" is \"%s\"\n", string7);
 
     return 0;
 }
